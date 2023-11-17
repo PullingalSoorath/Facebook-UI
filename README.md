@@ -1,6 +1,6 @@
 # Facebook UI Clone
 
-##This project is a work in progress and aims to replicate the user interface of Facebook.
+## This project is a work in progress and aims to replicate the user interface of Facebook.
 
 ## Overview
 
