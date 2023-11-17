@@ -5,24 +5,25 @@ class IconsAppBar extends StatelessWidget {
     super.key,
     required this.icon,
     this.ontap,
+    this.bgColor,
+    this.iconColor,
   });
 
   final IconData icon;
   final Function()? ontap;
+  final Color? bgColor;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(10.0),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.grey[300],
-      ),
+    return CircleAvatar(
+      radius: 20,
+      backgroundColor: bgColor,
       child: IconButton(
         onPressed: ontap,
         icon: Icon(icon),
-        color: Theme.of(context).colorScheme.primary,
-        iconSize: 30, // Set the icon color
+        color: iconColor,
+        iconSize: 25,
       ),
     );
   }

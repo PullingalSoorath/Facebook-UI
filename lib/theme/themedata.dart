@@ -15,3 +15,5 @@ final ThemeData darkTheme = ThemeData(
     primary: Colors.white,
   ),
 );
+
+final Color defaultBlue = Color.fromARGB(255, 8, 102, 255);

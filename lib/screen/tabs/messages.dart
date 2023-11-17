@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Messages extends StatelessWidget {
-  const Messages({super.key});
+class MyProfile extends StatelessWidget {
+  const MyProfile({super.key});
 
   @override
   Widget build(BuildContext context) {

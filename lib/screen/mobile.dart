@@ -6,10 +6,9 @@ import 'package:facebookclone/screen/tabs/marketplace.dart';
 import 'package:facebookclone/screen/tabs/messages.dart';
 import 'package:facebookclone/screen/tabs/notifications.dart';
 import 'package:facebookclone/screen/tabs/reels.dart';
+import 'package:facebookclone/theme/themedata.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../widget/icons_app_bar.dart';
 
 class MobileScreen extends StatefulWidget {
   const MobileScreen({super.key});
@@ -49,24 +48,34 @@ class _MobileScreenState extends State<MobileScreen>
                 child: Text(
                   'facebook',
                   style: TextStyle(
-                    color: Colors.blue[800],
+                    color: defaultBlue,
                     fontFamily: 'facebook',
                     fontSize: 40,
                   ),
                 ),
               ),
               actions: [
-                IconsAppBar(
-                  icon: Icons.add,
-                  ontap: () {},
+                IconButton(
+                  icon: Icon(
+                    Icons.add_circle,
+                    size: 35,
+                  ),
+                  color: Theme.of(context).colorScheme.primary,
+                  onPressed: () {},
                 ),
-                IconsAppBar(
-                  icon: Icons.search,
-                  ontap: () {},
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    'assets/svg/search.svg',
+                    height: 30,
+                  ),
                 ),
-                IconsAppBar(
-                  icon: Icons.menu,
-                  ontap: () {},
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(
+                    'assets/svg/messages.svg',
+                    height: 30,
+                  ),
                 ),
               ],
             )
@@ -78,8 +87,7 @@ class _MobileScreenState extends State<MobileScreen>
             children: [
               TabBar(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                labelColor: Colors.red,
-                indicatorColor: Colors.transparent,
+                indicatorColor: defaultBlue,
                 controller: _tabController,
                 onTap: (value) {
                   if (value == 0) {
@@ -119,25 +127,7 @@ class _MobileScreenState extends State<MobileScreen>
                       'assets/svg/home.svg',
                       height: 30,
                       color: _tabController.index == 0
-                          ? Colors.blue[700]
-                          : Colors.grey[700],
-                    ),
-                  ),
-                  Tab(
-                    icon: SvgPicture.asset(
-                      'assets/svg/friends.svg',
-                      height: 30,
-                      color: _tabController.index == 1
-                          ? Colors.blue[700]
-                          : Colors.grey[700],
-                    ),
-                  ),
-                  Tab(
-                    icon: SvgPicture.asset(
-                      'assets/svg/messages.svg',
-                      height: 30,
-                      color: _tabController.index == 2
-                          ? Colors.blue[700]
+                          ? defaultBlue
                           : Colors.grey[700],
                     ),
                   ),
@@ -146,16 +136,16 @@ class _MobileScreenState extends State<MobileScreen>
                       'assets/svg/reels.svg',
                       height: 30,
                       color: _tabController.index == 3
-                          ? Colors.blue[700]
+                          ? defaultBlue
                           : Colors.grey[700],
                     ),
                   ),
                   Tab(
                     icon: SvgPicture.asset(
-                      'assets/svg/notifications.svg',
+                      'assets/svg/friends.svg',
                       height: 30,
-                      color: _tabController.index == 4
-                          ? Colors.blue[700]
+                      color: _tabController.index == 1
+                          ? defaultBlue
                           : Colors.grey[700],
                     ),
                   ),
@@ -164,9 +154,42 @@ class _MobileScreenState extends State<MobileScreen>
                       'assets/svg/market.svg',
                       height: 30,
                       color: _tabController.index == 5
-                          ? Colors.blue[700]
+                          ? defaultBlue
                           : Colors.grey[700],
                     ),
+                  ),
+                  Tab(
+                    icon: SvgPicture.asset(
+                      'assets/svg/notifications.svg',
+                      height: 30,
+                      color: _tabController.index == 4
+                          ? defaultBlue
+                          : Colors.grey[700],
+                    ),
+                  ),
+                  Stack(
+                    alignment: Alignment(1.5, .9),
+                    children: [
+                      Tab(
+                        icon: CircleAvatar(
+                          backgroundImage:
+                              AssetImage('assets/images/profilepic.jpeg'),
+                        ),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 12,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[700],
+                          radius: 10,
+                          child: Icon(
+                            Icons.menu,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),
@@ -180,19 +203,19 @@ class _MobileScreenState extends State<MobileScreen>
                       HomeScreen(),
 
                       // Content for Tab 2
-                      FriendsPage(),
+                      ReelsPage(),
 
                       // Content for Tab 3
-                      Messages(),
+                      FriendsPage(),
 
                       // Content for Tab 4
-                      ReelsPage(),
+                      MarketPlace(),
 
                       // Content for Tab 5
                       NotificationPage(),
 
                       // Content for Tab 6
-                      MarketPlace(),
+                      MyProfile(),
                     ],
                   ),
                 ),
