@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Posts extends StatelessWidget {
   const Posts(
@@ -81,10 +82,10 @@ class Posts extends StatelessWidget {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 5, top: 10),
+                  padding: const EdgeInsets.only(left: 5, top: 10),
                   child: Text(
                     comment,
-                    style: TextStyle(fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
@@ -93,12 +94,24 @@ class Posts extends StatelessWidget {
         ),
         Container(
           width: double.infinity,
-          color: Colors.lightBlue,
+          color: Colors.grey,
           child: Image.network(
             pics,
             fit: BoxFit.cover,
           ),
         ),
+        Container(
+          color: Theme.of(context).colorScheme.background,
+          height: 80,
+          child: Column(children: [
+            Row(
+              children: [SvgPicture.asset('assets/svg/market.svg')],
+            ),
+            Row(
+              children: [],
+            )
+          ]),
+        )
       ],
     );
   }

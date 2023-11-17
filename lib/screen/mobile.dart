@@ -137,7 +137,7 @@ class _MobileScreenState extends State<MobileScreen>
                     icon: SvgPicture.asset(
                       'assets/svg/reels.svg',
                       height: 35,
-                      color: _tabController.index == 3
+                      color: _tabController.index == 1
                           ? defaultBlue
                           : Colors.grey[700],
                     ),
@@ -146,7 +146,7 @@ class _MobileScreenState extends State<MobileScreen>
                     icon: SvgPicture.asset(
                       'assets/svg/friends.svg',
                       height: 35,
-                      color: _tabController.index == 1
+                      color: _tabController.index == 2
                           ? defaultBlue
                           : Colors.grey[700],
                     ),
@@ -155,7 +155,7 @@ class _MobileScreenState extends State<MobileScreen>
                     icon: SvgPicture.asset(
                       'assets/svg/market.svg',
                       height: 35,
-                      color: _tabController.index == 5
+                      color: _tabController.index == 3
                           ? defaultBlue
                           : Colors.grey[700],
                     ),
