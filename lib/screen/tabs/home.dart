@@ -1,4 +1,6 @@
+import 'package:facebookclone/data/datas.dart';
 import 'package:facebookclone/theme/themedata.dart';
+import 'package:facebookclone/widget/posts.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -51,12 +53,14 @@ class HomeScreen extends StatelessWidget {
         Expanded(
           child: ListView.separated(
             itemBuilder: (context, index) {
+              final comments = comment[index];
+              final name = names[index];
               return index == 0
                   ? Expanded(
                       child: SizedBox(
                         height: 280,
                         child: ListView.builder(
-                          itemCount: 20,
+                          itemCount: names.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
                             return Padding(
@@ -74,9 +78,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     )
-                  : Container(
-                      height: 100, // Adjust the height as needed
-                      color: Colors.blue, // Add your content or styling here
+                  : Posts(
+                      comment: comments,
+                      name: name,
+                      pics: 'https://picsum.photos/400?image=$index',
                     );
             },
             separatorBuilder: (context, index) {
@@ -92,3 +97,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
