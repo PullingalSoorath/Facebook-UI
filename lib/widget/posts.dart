@@ -68,7 +68,10 @@ class _PostsState extends State<Posts> {
                                     backgroundColor: Colors.grey[900],
                                   ),
                                 ),
-                                const Icon(CupertinoIcons.globe),
+                                SvgPicture.asset(
+                                  'assets/svg/globe.svg',
+                                  height: 15,
+                                ),
                               ],
                             )
                           ],
