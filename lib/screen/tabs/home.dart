@@ -13,11 +13,13 @@ class HomeScreen extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
           child: SizedBox(
-            height: 70,
+            height: 90,
             child: Row(
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  radius: 25,
+                  radius: 30,
                   backgroundImage: AssetImage(
                     'assets/images/profilepic.jpeg',
                   ),
@@ -25,13 +27,17 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                    padding: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
                     child: SearchBar(
                       hintText: 'Write something here...',
+                      hintStyle: MaterialStatePropertyAll(
+                        TextStyle(color: Colors.black87, fontSize: 18),
+                      ),
                       elevation: MaterialStatePropertyAll(0),
                       side: MaterialStatePropertyAll(
                         BorderSide(
                           width: 1,
+                          color: Colors.black87,
                         ),
                       ),
                     ),
@@ -82,6 +88,8 @@ class HomeScreen extends StatelessWidget {
                       comment: comments,
                       name: name,
                       pics: 'https://picsum.photos/400?image=$index',
+                      profilePics:
+                          'https://picsum.photos/400?image=${index + 30}',
                     );
             },
             separatorBuilder: (context, index) {
@@ -97,5 +105,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

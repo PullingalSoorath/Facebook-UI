@@ -56,7 +56,7 @@ class _MobileScreenState extends State<MobileScreen>
               ),
               actions: [
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.add_circle,
                     size: 35,
                   ),
@@ -86,7 +86,6 @@ class _MobileScreenState extends State<MobileScreen>
           child: Column(
             children: [
               TabBar(
-                padding: const EdgeInsets.symmetric(vertical: 10),
                 indicatorColor: defaultBlue,
                 controller: _tabController,
                 onTap: (value) {
@@ -122,19 +121,22 @@ class _MobileScreenState extends State<MobileScreen>
                   }
                 },
                 tabs: [
-                  Tab(
-                    child: SvgPicture.asset(
-                      'assets/svg/home.svg',
-                      height: 30,
-                      color: _tabController.index == 0
-                          ? defaultBlue
-                          : Colors.grey[700],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5),
+                    child: Tab(
+                      child: SvgPicture.asset(
+                        'assets/svg/home.svg',
+                        height: 35,
+                        color: _tabController.index == 0
+                            ? defaultBlue
+                            : Colors.grey[700],
+                      ),
                     ),
                   ),
                   Tab(
                     icon: SvgPicture.asset(
                       'assets/svg/reels.svg',
-                      height: 30,
+                      height: 35,
                       color: _tabController.index == 3
                           ? defaultBlue
                           : Colors.grey[700],
@@ -143,7 +145,7 @@ class _MobileScreenState extends State<MobileScreen>
                   Tab(
                     icon: SvgPicture.asset(
                       'assets/svg/friends.svg',
-                      height: 30,
+                      height: 35,
                       color: _tabController.index == 1
                           ? defaultBlue
                           : Colors.grey[700],
@@ -152,7 +154,7 @@ class _MobileScreenState extends State<MobileScreen>
                   Tab(
                     icon: SvgPicture.asset(
                       'assets/svg/market.svg',
-                      height: 30,
+                      height: 35,
                       color: _tabController.index == 5
                           ? defaultBlue
                           : Colors.grey[700],
@@ -161,16 +163,16 @@ class _MobileScreenState extends State<MobileScreen>
                   Tab(
                     icon: SvgPicture.asset(
                       'assets/svg/notifications.svg',
-                      height: 30,
+                      height: 35,
                       color: _tabController.index == 4
                           ? defaultBlue
                           : Colors.grey[700],
                     ),
                   ),
                   Stack(
-                    alignment: Alignment(1.5, .9),
+                    alignment: const Alignment(1.5, .9),
                     children: [
-                      Tab(
+                      const Tab(
                         icon: CircleAvatar(
                           backgroundImage:
                               AssetImage('assets/images/profilepic.jpeg'),
@@ -182,7 +184,7 @@ class _MobileScreenState extends State<MobileScreen>
                         child: CircleAvatar(
                           backgroundColor: Colors.grey[700],
                           radius: 10,
-                          child: Icon(
+                          child: const Icon(
                             Icons.menu,
                             color: Colors.white,
                             size: 16,
@@ -193,8 +195,11 @@ class _MobileScreenState extends State<MobileScreen>
                   ),
                 ],
               ),
+              Container(
+                height: 2,
+                color: Colors.grey,
+              ),
               Expanded(
-                flex: 9,
                 child: SizedBox(
                   child: TabBarView(
                     controller: _tabController,

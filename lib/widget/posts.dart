@@ -6,10 +6,12 @@ class Posts extends StatelessWidget {
       {super.key,
       required this.name,
       required this.pics,
-      required this.comment});
+      required this.comment,
+      required this.profilePics});
   final String name;
   final String pics;
   final String comment;
+  final String profilePics;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,8 @@ class Posts extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
+                          foregroundImage: NetworkImage(profilePics),
                           radius: 25,
                         ),
                         const SizedBox(
@@ -37,7 +40,7 @@ class Posts extends StatelessWidget {
                           children: [
                             Text(
                               name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                               ),
