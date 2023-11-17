@@ -66,9 +66,10 @@ class HomeScreen extends StatelessWidget {
                       child: SizedBox(
                         height: 280,
                         child: ListView.builder(
-                          itemCount: names.length,
+                          itemCount: statusNames.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
+                            final statusname = statusNames[index];
                             return index == 0
                                 ?
 //My story
@@ -172,34 +173,59 @@ class HomeScreen extends StatelessWidget {
                                               fit: BoxFit.cover,
                                             ),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Stack(
-                                              alignment: Alignment.center,
-                                              children: [
-                                                Container(
-                                                  width: 50,
-                                                  height: 50,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                      50,
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Stack(
+                                                  alignment: Alignment.center,
+                                                  children: [
+                                                    Container(
+                                                      width: 50,
+                                                      height: 50,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                          50,
+                                                        ),
+                                                        color:
+                                                            Colors.transparent,
+                                                        border: Border.all(
+                                                          width: 2.5,
+                                                          color: defaultBlue,
+                                                        ),
+                                                      ),
                                                     ),
-                                                    color: Colors.transparent,
-                                                    border: Border.all(
-                                                      width: 2.5,
-                                                      color: defaultBlue,
+                                                    CircleAvatar(
+                                                      radius: 20,
+                                                      backgroundColor:
+                                                          Colors.grey,
+                                                      backgroundImage: NetworkImage(
+                                                          'https://picsum.photos/150?image=${index + 30}'),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Column(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text(
+                                                      statusname,
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                                CircleAvatar(
-                                                  radius: 20,
-                                                  backgroundColor: Colors.grey,
-                                                  backgroundImage: NetworkImage(
-                                                      'https://picsum.photos/150?image=${index + 30}'),
-                                                ),
-                                              ],
-                                            ),
+                                                ],
+                                              )
+                                            ],
                                           )
                                         ],
                                       ),
@@ -212,6 +238,7 @@ class HomeScreen extends StatelessWidget {
                   : Posts(
                       comment: comments,
                       name: name,
+                      index: index,
                       pics: 'https://picsum.photos/400?image=$index',
                       profilePics:
                           'https://picsum.photos/400?image=${index + 30}',

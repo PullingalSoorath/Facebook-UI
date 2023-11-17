@@ -38,6 +38,7 @@ class _MobileScreenState extends State<MobileScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: showLabel
           ? AppBar(
               backgroundColor: Theme.of(context).colorScheme.background,

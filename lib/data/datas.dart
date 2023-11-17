@@ -1,4 +1,3 @@
-
 var names = [
   'Your story',
   'Faizal',
@@ -55,4 +54,32 @@ var comment = [
   ' Top 10',
   ' Hungry!!!',
   ' UnForgettable moments',
+];
+
+var statusNames = [
+  'Oliver',
+  'Ethan',
+  'Liam',
+  'Noah',
+  'Aiden',
+  'Gabriel',
+  'Xavier',
+  'Mason',
+  'Caleb',
+  'Julian',
+  'Wyatt',
+  'Leo',
+  'Owen',
+  'Sebastian',
+  'Lucas',
+  'Elijah',
+  'Jackson',
+  'Levi',
+  'Theodore',
+  'Nolan',
+  'Harrison',
+  'Declan',
+  'Everett',
+  'Silas',
+  'Bennett',
 ];
