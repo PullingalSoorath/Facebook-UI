@@ -16,4 +16,4 @@ final ThemeData darkTheme = ThemeData(
   ),
 );
 
-final Color defaultBlue = Color.fromARGB(255, 8, 102, 255);
+const Color defaultBlue = Color.fromARGB(255, 8, 102, 255);
