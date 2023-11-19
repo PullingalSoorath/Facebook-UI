@@ -83,3 +83,31 @@ var statusNames = [
   'Silas',
   'Bennett',
 ];
+
+List<Map<String, dynamic>> groups = [
+  {
+    'name': 'Brototype',
+    'pics':
+        'https://cdn.pixabay.com/photo/2014/09/07/21/58/cyborg-438398_640.jpg',
+  },
+  {
+    'name': 'Samsung',
+    'pics':
+        'https://cdn.pixabay.com/photo/2019/05/14/16/07/young-4202743_1280.jpg',
+  },
+  {
+    'name': 'Flipkart',
+    'pics':
+        'https://cdn.pixabay.com/photo/2016/10/02/19/50/brain-1710293_640.png',
+  },
+  {
+    'name': 'Amazone',
+    'pics':
+        'https://cdn.pixabay.com/photo/2016/10/02/19/50/brain-1710293_640.png',
+  },
+  {
+    'name': 'Flutter',
+    'pics':
+        'https://cdn.pixabay.com/photo/2016/10/02/19/50/brain-1710293_640.png',
+  },
+];

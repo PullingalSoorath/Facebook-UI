@@ -44,8 +44,8 @@ class _MobileScreenState extends State<MobileScreen>
               backgroundColor: Theme.of(context).colorScheme.background,
               toolbarHeight: 80.0,
               elevation: 0,
-              title: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+              title: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
                 child: Text(
                   'facebook',
                   style: TextStyle(
@@ -87,40 +87,9 @@ class _MobileScreenState extends State<MobileScreen>
           child: Column(
             children: [
               TabBar(
-                indicatorColor: defaultBlue,
                 controller: _tabController,
-                onTap: (value) {
-                  if (value == 0) {
-                    setState(() {
-                      showLabel = true;
-                    });
-                  }
-                  if (value == 1) {
-                    setState(() {
-                      showLabel = false;
-                    });
-                  }
-                  if (value == 2) {
-                    setState(() {
-                      showLabel = false;
-                    });
-                  }
-                  if (value == 3) {
-                    setState(() {
-                      showLabel = false;
-                    });
-                  }
-                  if (value == 4) {
-                    setState(() {
-                      showLabel = false;
-                    });
-                  }
-                  if (value == 5) {
-                    setState(() {
-                      showLabel = false;
-                    });
-                  }
-                },
+                indicatorColor: defaultBlue,
+                indicatorWeight: 3,
                 tabs: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -196,6 +165,7 @@ class _MobileScreenState extends State<MobileScreen>
                   ),
                 ],
               ),
+             
               Container(
                 height: 2,
                 color: Colors.grey,

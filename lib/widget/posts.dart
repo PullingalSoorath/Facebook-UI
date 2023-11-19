@@ -30,7 +30,7 @@ class _PostsState extends State<Posts> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(10.0),
           child: SizedBox(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,15 +81,21 @@ class _PostsState extends State<Posts> {
                       children: [
                         IconButton(
                           onPressed: () {
-                            //close buttton
+                            //more buttton
                           },
-                          icon: const Icon(Icons.more_horiz),
+                          icon: const Icon(
+                            Icons.more_horiz,
+                            size: 30,
+                          ),
                         ),
                         IconButton(
                           onPressed: () {
                             //close buttton
                           },
-                          icon: const Icon(Icons.close),
+                          icon: const Icon(
+                            Icons.close,
+                            size: 30,
+                          ),
                         ),
                       ],
                     ),

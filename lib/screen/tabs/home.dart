@@ -1,10 +1,12 @@
 import 'package:facebookclone/data/datas.dart';
 import 'package:facebookclone/widget/posts.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_svg/svg.dart';
 import '../../widget/friends_story.dart';
+import '../../widget/join_groups.dart';
 import '../../widget/my_story.dart';
 import '../../widget/search_bar_home.dart';
+import '../../widget/shorts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,44 +19,49 @@ class HomeScreen extends StatelessWidget {
     );
     return Column(
       children: [
-        const SearchBarHome(),
-        gapContainer,
         Expanded(
           child: ListView.separated(
             itemBuilder: (context, index) {
               final comments = comment[index];
               final name = names[index];
               return index == 0
-                  ? Expanded(
-                      child: SizedBox(
-                        height: 280,
-                        child: ListView.builder(
-                          itemCount: statusNames.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            final statusname = statusNames[index];
-                            return index == 0
-                                ?
+                  ? const SearchBarHome()
+                  : index == 1
+                      ? Expanded(
+                          child: SizedBox(
+                            height: 280,
+                            child: ListView.builder(
+                              itemCount: statusNames.length,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                final statusname = statusNames[index];
+                                return index == 0
+                                    ?
 //My story
-                                const MyStory()
-                                :
+                                    const MyStory()
+                                    :
 //Friends story
-                                FriendsStory(
-                                    statusname: statusname,
-                                    index: index,
-                                  );
-                          },
-                        ),
-                      ),
-                    )
-                  : Posts(
-                      comment: comments,
-                      name: name,
-                      index: index,
-                      pics: 'https://picsum.photos/400?image=$index',
-                      profilePics:
-                          'https://picsum.photos/400?image=${index + 30}',
-                    );
+                                    FriendsStory(
+                                        statusname: statusname,
+                                        index: index,
+                                      );
+                              },
+                            ),
+                          ),
+                        )
+                      : index == 3
+                          ? const JoinGroups()
+                          : index == 5
+                              ? const Shorts()
+                              : Posts(
+                                  comment: comments,
+                                  name: name,
+                                  index: index,
+                                  pics:
+                                      'https://picsum.photos/400?image=$index',
+                                  profilePics:
+                                      'https://picsum.photos/400?image=${index + 30}',
+                                );
             },
             separatorBuilder: (context, index) {
               return gapContainer;
