@@ -1,7 +1,6 @@
 import 'package:facebookclone/data/datas.dart';
 import 'package:facebookclone/widget/posts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import '../../widget/friends_story.dart';
 import '../../widget/join_groups.dart';
 import '../../widget/my_story.dart';

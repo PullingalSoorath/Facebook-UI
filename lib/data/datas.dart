@@ -87,27 +87,25 @@ var statusNames = [
 List<Map<String, dynamic>> groups = [
   {
     'name': 'Brototype',
-    'pics':
-        'https://cdn.pixabay.com/photo/2014/09/07/21/58/cyborg-438398_640.jpg',
+    'pics': 'https://t.waziper.com/uploads/avatar/26201.jpg',
   },
   {
     'name': 'Samsung',
-    'pics':
-        'https://cdn.pixabay.com/photo/2019/05/14/16/07/young-4202743_1280.jpg',
+    'pics': 'https://logowik.com/content/uploads/images/samsung9636.jpg',
   },
   {
     'name': 'Flipkart',
     'pics':
-        'https://cdn.pixabay.com/photo/2016/10/02/19/50/brain-1710293_640.png',
+        'https://seeklogo.com/images/F/flipkart-logo-3F33927DAA-seeklogo.com.png',
   },
   {
     'name': 'Amazone',
     'pics':
-        'https://cdn.pixabay.com/photo/2016/10/02/19/50/brain-1710293_640.png',
+        'https://i.pinimg.com/564x/fa/16/b8/fa16b892512b3df516211c68fc489134.jpg',
   },
   {
     'name': 'Flutter',
     'pics':
-        'https://cdn.pixabay.com/photo/2016/10/02/19/50/brain-1710293_640.png',
+        'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/217829643/original/04b34c43c30dad50318af89156fcc6a93dc554e1/develop-mobile-applications-in-flutter.jpg',
   },
 ];

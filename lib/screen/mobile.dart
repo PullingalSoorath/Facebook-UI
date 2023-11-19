@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MobileScreen extends StatefulWidget {
-  const MobileScreen({super.key});
+  const MobileScreen({Key? key}) : super(key: key);
 
   @override
   State<MobileScreen> createState() => _MobileScreenState();
@@ -39,167 +39,154 @@ class _MobileScreenState extends State<MobileScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: showLabel
-          ? AppBar(
-              backgroundColor: Theme.of(context).colorScheme.background,
-              toolbarHeight: 80.0,
-              elevation: 0,
-              title: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text(
-                  'facebook',
-                  style: TextStyle(
-                    color: defaultBlue,
-                    fontFamily: 'facebook',
-                    fontSize: 40,
-                  ),
-                ),
-              ),
-              actions: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.add_circle,
-                    size: 35,
-                  ),
-                  color: Theme.of(context).colorScheme.primary,
-                  onPressed: () {},
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    'assets/svg/search.svg',
-                    height: 30,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    'assets/svg/messages.svg',
-                    height: 30,
-                  ),
-                ),
-              ],
-            )
-          : null,
       body: SafeArea(
         child: DefaultTabController(
           length: 6,
-          child: Column(
-            children: [
-              TabBar(
-                controller: _tabController,
-                indicatorColor: defaultBlue,
-                indicatorWeight: 3,
-                tabs: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: Tab(
-                      child: SvgPicture.asset(
-                        'assets/svg/home.svg',
-                        height: 35,
-                        color: _tabController.index == 0
-                            ? defaultBlue
-                            : Colors.grey[700],
+          child: NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) => [
+              SliverAppBar(
+                backgroundColor: Theme.of(context).colorScheme.background,
+                floating: true,
+                pinned: false,
+                elevation: 0,
+                title: Text(
+                  'facebook',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? defaultBlue
+                        : Colors.white,
+                  ),
+                ),
+                actions: [
+                  IconButton(
+                    icon: const Icon(
+                      Icons.add_circle,
+                      size: 30,
+                    ),
+                    color: Theme.of(context).colorScheme.primary,
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset(
+                      'assets/svg/search.svg',
+                      height: 25,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset(
+                      'assets/svg/messages.svg',
+                      height: 25,
+                    ),
+                  ),
+                ],
+              ),
+              SliverPersistentHeader(
+                delegate: _SliverAppBarDelegate(
+                  TabBar(
+                    controller: _tabController,
+                    indicatorColor: defaultBlue,
+                    indicatorWeight: 3,
+                    tabs: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: Tab(
+                          child: SvgPicture.asset(
+                            'assets/svg/home.svg',
+                            height: 35,
+                            color: _tabController.index == 0
+                                ? defaultBlue
+                                : Colors.grey[700],
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Tab(
-                    icon: SvgPicture.asset(
-                      'assets/svg/reels.svg',
-                      height: 35,
-                      color: _tabController.index == 1
-                          ? defaultBlue
-                          : Colors.grey[700],
-                    ),
-                  ),
-                  Tab(
-                    icon: SvgPicture.asset(
-                      'assets/svg/friends.svg',
-                      height: 35,
-                      color: _tabController.index == 2
-                          ? defaultBlue
-                          : Colors.grey[700],
-                    ),
-                  ),
-                  Tab(
-                    icon: SvgPicture.asset(
-                      'assets/svg/market.svg',
-                      height: 35,
-                      color: _tabController.index == 3
-                          ? defaultBlue
-                          : Colors.grey[700],
-                    ),
-                  ),
-                  Tab(
-                    icon: SvgPicture.asset(
-                      'assets/svg/notifications.svg',
-                      height: 35,
-                      color: _tabController.index == 4
-                          ? defaultBlue
-                          : Colors.grey[700],
-                    ),
-                  ),
-                  Stack(
-                    alignment: const Alignment(1.5, .9),
-                    children: [
+                      Tab(
+                        icon: SvgPicture.asset(
+                          'assets/svg/reels.svg',
+                          height: 35,
+                          color: _tabController.index == 1
+                              ? defaultBlue
+                              : Colors.grey[700],
+                        ),
+                      ),
+                      Tab(
+                        icon: SvgPicture.asset(
+                          'assets/svg/friends.svg',
+                          height: 35,
+                          color: _tabController.index == 2
+                              ? defaultBlue
+                              : Colors.grey[700],
+                        ),
+                      ),
+                      Tab(
+                        icon: SvgPicture.asset(
+                          'assets/svg/market.svg',
+                          height: 35,
+                          color: _tabController.index == 3
+                              ? defaultBlue
+                              : Colors.grey[700],
+                        ),
+                      ),
+                      Tab(
+                        icon: SvgPicture.asset(
+                          'assets/svg/notifications.svg',
+                          height: 35,
+                          color: _tabController.index == 4
+                              ? defaultBlue
+                              : Colors.grey[700],
+                        ),
+                      ),
                       const Tab(
                         icon: CircleAvatar(
                           backgroundImage:
                               AssetImage('assets/images/profilepic.jpeg'),
                         ),
                       ),
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 12,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.grey[700],
-                          radius: 10,
-                          child: const Icon(
-                            Icons.menu,
-                            color: Colors.white,
-                            size: 16,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-             
-              Container(
-                height: 2,
-                color: Colors.grey,
-              ),
-              Expanded(
-                child: SizedBox(
-                  child: TabBarView(
-                    controller: _tabController,
-                    children: const [
-                      // Content for Tab 1
-                      HomeScreen(),
-
-                      // Content for Tab 2
-                      ReelsPage(),
-
-                      // Content for Tab 3
-                      FriendsPage(),
-
-                      // Content for Tab 4
-                      MarketPlace(),
-
-                      // Content for Tab 5
-                      NotificationPage(),
-
-                      // Content for Tab 6
-                      MyProfile(),
                     ],
                   ),
                 ),
               ),
             ],
+            body: TabBarView(
+              controller: _tabController,
+              children: const [
+                HomeScreen(),
+                ReelsPage(),
+                FriendsPage(),
+                MarketPlace(),
+                NotificationPage(),
+                MyProfile(),
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+}
+
+class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+  final TabBar _tabBar;
+
+  _SliverAppBarDelegate(this._tabBar);
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return _tabBar;
+  }
+
+  @override
+  double get maxExtent => _tabBar.preferredSize.height;
+
+  @override
+  double get minExtent => _tabBar.preferredSize.height;
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }
