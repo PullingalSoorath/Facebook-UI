@@ -4,6 +4,8 @@ import 'package:facebookclone/theme/themedata.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'image_view.dart';
+
 class Posts extends StatefulWidget {
   const Posts(
       {super.key,
@@ -112,14 +114,7 @@ class _PostsState extends State<Posts> {
             ),
           ),
         ),
-        Container(
-          width: double.infinity,
-          color: Colors.grey,
-          child: Image.network(
-            widget.pics,
-            fit: BoxFit.cover,
-          ),
-        ),
+        ImageView(widget: widget),
         Padding(
           padding: const EdgeInsets.all(15),
           child: Column(
@@ -225,11 +220,3 @@ class _PostsState extends State<Posts> {
     );
   }
 }
-
-
-// Image.network(
-//           'https://picsum.photos/250?image=9',
-//           fit: BoxFit.cover,
-//         ),
-
-            // '',
