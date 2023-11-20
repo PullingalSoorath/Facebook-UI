@@ -44,46 +44,47 @@ class _MobileScreenState extends State<MobileScreen>
           length: 6,
           child: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) => [
-              SliverAppBar(
-                backgroundColor: Theme.of(context).colorScheme.background,
-                floating: true,
-                pinned: false,
-                elevation: 0,
-                title: Text(
-                  'facebook',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).brightness == Brightness.light
-                        ? defaultBlue
-                        : Colors.white,
+              if (showLabel)
+                SliverAppBar(
+                  backgroundColor: Theme.of(context).colorScheme.background,
+                  floating: true,
+                  pinned: false,
+                  elevation: 0,
+                  title: Text(
+                    'facebook',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? defaultBlue
+                          : Colors.white,
+                    ),
                   ),
+                  actions: [
+                    IconButton(
+                      icon: const Icon(
+                        Icons.add_circle,
+                        size: 30,
+                      ),
+                      color: Theme.of(context).colorScheme.primary,
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: SvgPicture.asset(
+                        'assets/svg/search.svg',
+                        height: 25,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: SvgPicture.asset(
+                        'assets/svg/messages.svg',
+                        height: 25,
+                      ),
+                    ),
+                  ],
                 ),
-                actions: [
-                  IconButton(
-                    icon: const Icon(
-                      Icons.add_circle,
-                      size: 30,
-                    ),
-                    color: Theme.of(context).colorScheme.primary,
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      'assets/svg/search.svg',
-                      height: 25,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: SvgPicture.asset(
-                      'assets/svg/messages.svg',
-                      height: 25,
-                    ),
-                  ),
-                ],
-              ),
               SliverPersistentHeader(
                 delegate: _SliverAppBarDelegate(
                   TabBar(

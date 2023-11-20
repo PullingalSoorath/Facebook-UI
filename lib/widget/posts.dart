@@ -142,7 +142,7 @@ class _PostsState extends State<Posts> {
                   ),
                 ],
               ),
-              Divider(thickness: 1, color: Colors.grey[600]),
+              const Divider(thickness: 1, color: Colors.grey),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -164,11 +164,17 @@ class _PostsState extends State<Posts> {
                             : SvgPicture.asset(
                                 'assets/svg/like.svg',
                                 height: 30,
+                                color: Colors.grey[600],
                               ),
                         const SizedBox(
                           width: 5,
                         ),
-                        const Text('Like'),
+                        Text(
+                          'Like',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -177,12 +183,17 @@ class _PostsState extends State<Posts> {
                       SvgPicture.asset(
                         'assets/svg/chat.svg',
                         height: 25,
-                        color: Colors.grey[900],
+                        color: Colors.grey[700],
                       ),
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text('Comment')
+                      Text(
+                        'Comment',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                        ),
+                      )
                     ],
                   ),
                   Row(
@@ -190,12 +201,17 @@ class _PostsState extends State<Posts> {
                       SvgPicture.asset(
                         'assets/svg/whatsapp.svg',
                         height: 25,
-                        color: Colors.grey[900],
+                        color: Colors.grey[600],
                       ),
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text('Sent')
+                      Text(
+                        'Sent',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                        ),
+                      )
                     ],
                   ),
                   Row(
@@ -203,12 +219,17 @@ class _PostsState extends State<Posts> {
                       SvgPicture.asset(
                         'assets/svg/share.svg',
                         height: 26,
-                        color: Colors.grey[900],
+                        color: Colors.grey[600],
                       ),
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text('Share')
+                      Text(
+                        'Share',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                        ),
+                      )
                     ],
                   ),
                 ],

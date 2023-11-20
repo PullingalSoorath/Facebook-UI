@@ -12,8 +12,9 @@ class JoinGroups extends StatefulWidget {
   State<JoinGroups> createState() => _JoinGroupsState();
 }
 
+bool showDialoge = true;
+
 class _JoinGroupsState extends State<JoinGroups> {
-  bool showDialoge = true;
   @override
   Widget build(BuildContext context) {
     return AnimatedCrossFade(
