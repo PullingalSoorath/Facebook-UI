@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:facebookclone/theme/themedata.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -156,13 +158,13 @@ class _ReelsPageState extends State<ReelsPage> {
                                       // Text('${widget.index * 18 + likes + 100}')
                                     ],
                                   ),
-                                  Row(
+                                  const Row(
                                     children: [
                                       // Text('${widget.index * 23}'),
-                                      const SizedBox(
+                                      SizedBox(
                                         width: 5,
                                       ),
-                                      const Text('Comments'),
+                                      Text('Comments'),
                                     ],
                                   ),
                                 ],
