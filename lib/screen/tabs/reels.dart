@@ -125,7 +125,9 @@ class _ReelsPageState extends State<ReelsPage> {
                         const Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: 12, vertical: 10),
-                          child: Text('Comments💢💢💢here...'),
+                          child: Text(
+                            'Comments💢💢💢hereo...',
+                          ),
                         ),
                         SizedBox(
                           width: double.infinity,

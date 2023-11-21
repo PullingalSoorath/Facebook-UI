@@ -92,22 +92,19 @@ class _MobileScreenState extends State<MobileScreen>
                     indicatorColor: defaultBlue,
                     indicatorWeight: 3,
                     tabs: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5),
-                        child: Tab(
-                          child: SvgPicture.asset(
-                            'assets/svg/home.svg',
-                            height: 35,
-                            color: _tabController.index == 0
-                                ? defaultBlue
-                                : Colors.grey[700],
-                          ),
+                      Tab(
+                        child: SvgPicture.asset(
+                          'assets/svg/home.svg',
+                          height: 30,
+                          color: _tabController.index == 0
+                              ? defaultBlue
+                              : Colors.grey[700],
                         ),
                       ),
                       Tab(
                         icon: SvgPicture.asset(
                           'assets/svg/reels.svg',
-                          height: 35,
+                          height: 30,
                           color: _tabController.index == 1
                               ? defaultBlue
                               : Colors.grey[700],
@@ -116,7 +113,7 @@ class _MobileScreenState extends State<MobileScreen>
                       Tab(
                         icon: SvgPicture.asset(
                           'assets/svg/friends.svg',
-                          height: 35,
+                          height: 30,
                           color: _tabController.index == 2
                               ? defaultBlue
                               : Colors.grey[700],
@@ -125,7 +122,7 @@ class _MobileScreenState extends State<MobileScreen>
                       Tab(
                         icon: SvgPicture.asset(
                           'assets/svg/market.svg',
-                          height: 35,
+                          height: 30,
                           color: _tabController.index == 3
                               ? defaultBlue
                               : Colors.grey[700],
@@ -134,7 +131,7 @@ class _MobileScreenState extends State<MobileScreen>
                       Tab(
                         icon: SvgPicture.asset(
                           'assets/svg/notifications.svg',
-                          height: 35,
+                          height: 30,
                           color: _tabController.index == 4
                               ? defaultBlue
                               : Colors.grey[700],
@@ -142,6 +139,7 @@ class _MobileScreenState extends State<MobileScreen>
                       ),
                       const Tab(
                         icon: CircleAvatar(
+                          radius: 15.0,
                           backgroundImage:
                               AssetImage('assets/images/profilepic.jpeg'),
                         ),

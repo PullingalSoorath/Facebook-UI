@@ -10,13 +10,13 @@ class SearchBarHome extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: SizedBox(
-        height: 90,
+        height: 65,
         child: Row(
           // crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
-              radius: 30,
+              radius: 25,
               backgroundImage: AssetImage(
                 'assets/images/profilepic.jpeg',
               ),
@@ -24,7 +24,7 @@ class SearchBarHome extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: SearchBar(
                   hintText: 'Write something here...',
                   hintStyle: MaterialStatePropertyAll(
