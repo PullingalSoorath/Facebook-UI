@@ -13,8 +13,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var gapContainer = Container(
-      color: Colors.grey[400],
-      height: 10,
+      color: Theme.of(context).colorScheme.onPrimary,
+      height: 8,
     );
     return Column(
       children: [

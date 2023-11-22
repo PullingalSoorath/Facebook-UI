@@ -5,6 +5,8 @@ final ThemeData lightTheme = ThemeData(
   colorScheme: const ColorScheme.light(
     background: Colors.white,
     primary: Colors.black,
+    secondary: Colors.white,
+    onPrimary: Colors.grey,
   ),
 );
 
@@ -13,7 +15,11 @@ final ThemeData darkTheme = ThemeData(
   colorScheme: const ColorScheme.dark(
     background: Colors.grey,
     primary: Colors.white,
+    secondary: Colors.black,
+    onPrimary: Color.fromRGBO(33, 33, 33, 1),
   ),
 );
 
 const Color defaultBlue = Color.fromARGB(255, 8, 102, 255);
+
+

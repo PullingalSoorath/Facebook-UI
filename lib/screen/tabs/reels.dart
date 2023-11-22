@@ -4,6 +4,8 @@ import 'package:facebookclone/theme/themedata.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../widget/like_button.dart';
+
 class ReelsPage extends StatefulWidget {
   const ReelsPage({Key? key}) : super(key: key);
 
@@ -129,7 +131,7 @@ class _ReelsPageState extends State<ReelsPage> {
                             'Comments💢💢💢hereo...',
                           ),
                         ),
-                        SizedBox(
+                        Container(
                           width: double.infinity,
                           child: Flexible(
                             flex: 3,
@@ -149,20 +151,14 @@ class _ReelsPageState extends State<ReelsPage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    children: [
-                                      SvgPicture.asset(
-                                          'assets/svg/likeblue.svg',
-                                          height: 25),
-                                      const SizedBox(
-                                        width: 5,
-                                      ),
-                                      // Text('${widget.index * 18 + likes + 100}')
-                                    ],
+                                  SvgPicture.asset(
+                                    'assets/svg/likeblue.svg',
+                                    height: 25,
                                   ),
                                   const Row(
                                     children: [
                                       // Text('${widget.index * 23}'),
+
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -183,28 +179,9 @@ class _ReelsPageState extends State<ReelsPage> {
                                         isliked ? likes == likes++ : likes--;
                                       });
                                     },
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        isliked
-                                            ? SvgPicture.asset(
-                                                'assets/svg/like fill.svg',
-                                                color: defaultBlue,
-                                                height: 30,
-                                              )
-                                            : SvgPicture.asset(
-                                                'assets/svg/like.svg',
-                                                height: 30,
-                                                color: Colors.grey[600],
-                                              ),
-                                        const SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          'Like',
-                                          style: TextStyle(
-                                            color: Colors.grey[600],
-                                          ),
-                                        ),
+                                        LikeButton(initialIsLiked: false),
                                       ],
                                     ),
                                   ),
@@ -228,10 +205,13 @@ class _ReelsPageState extends State<ReelsPage> {
                                   ),
                                   Row(
                                     children: [
-                                      SvgPicture.asset(
-                                        'assets/svg/whatsapp.svg',
-                                        height: 25,
-                                        color: Colors.grey[600],
+                                      RotatedBox(
+                                        quarterTurns: 2,
+                                        child: SvgPicture.asset(
+                                          'assets/svg/star-shooting.svg',
+                                          height: 35,
+                                          color: Colors.grey[700],
+                                        ),
                                       ),
                                       const SizedBox(
                                         width: 5,
@@ -273,8 +253,8 @@ class _ReelsPageState extends State<ReelsPage> {
                 },
                 separatorBuilder: (context, index) {
                   return Container(
-                    height: 10,
-                    color: Colors.grey,
+                    height: 5,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   );
                 },
                 itemCount: 10),

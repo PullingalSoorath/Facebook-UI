@@ -237,14 +237,17 @@ class _JoinGroupsState extends State<JoinGroups> {
                                       width: 80,
                                       child: ElevatedButton(
                                         style: ButtonStyle(
+                                          padding:
+                                              const MaterialStatePropertyAll(
+                                                  EdgeInsets.all(0)),
                                           backgroundColor:
                                               const MaterialStatePropertyAll(
-                                            Colors.grey,
+                                            Color.fromARGB(255, 205, 205, 205),
                                           ),
-                                          foregroundColor:
-                                              MaterialStatePropertyAll(
-                                            Colors.grey[900],
-                                          ),
+                                          // foregroundColor:
+                                          //     MaterialStatePropertyAll(
+                                          //   Colors.grey[600],
+                                          // ),
                                           shape: MaterialStatePropertyAll(
                                             RoundedRectangleBorder(
                                               borderRadius:
@@ -260,7 +263,7 @@ class _JoinGroupsState extends State<JoinGroups> {
                                           });
                                         },
                                         child: const Text(
-                                          'Delete',
+                                          'Remove',
                                         ),
                                       ),
                                     ),
@@ -283,8 +286,8 @@ class _JoinGroupsState extends State<JoinGroups> {
                 child: ElevatedButton(
                   style: ButtonStyle(
                     elevation: const MaterialStatePropertyAll(0),
-                    backgroundColor: MaterialStatePropertyAll(
-                      Colors.grey[400],
+                    backgroundColor: const MaterialStatePropertyAll(
+                      Color.fromARGB(255, 205, 205, 205),
                     ),
                     foregroundColor: MaterialStatePropertyAll(
                       Colors.grey[900],
