@@ -155,10 +155,9 @@ class _ReelsPageState extends State<ReelsPage> {
                                     'assets/svg/likeblue.svg',
                                     height: 25,
                                   ),
-                                  const Row(
+                                  Row(
                                     children: [
-                                      // Text('${widget.index * 23}'),
-
+                                      Text('${index * 23 + 6}'),
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -179,9 +178,15 @@ class _ReelsPageState extends State<ReelsPage> {
                                         isliked ? likes == likes++ : likes--;
                                       });
                                     },
-                                    child: const Row(
+                                    child: Row(
                                       children: [
-                                        LikeButton(initialIsLiked: false),
+                                        const LikeButton(initialIsLiked: false),
+                                        Text(
+                                          'Likes',
+                                          style: TextStyle(
+                                            color: Colors.grey[700],
+                                          ),
+                                        )
                                       ],
                                     ),
                                   ),

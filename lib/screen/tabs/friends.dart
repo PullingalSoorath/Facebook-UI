@@ -89,23 +89,24 @@ class FriendsPage extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 1,
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 1,
+                    ),
+                    child: Container(
+                      height: 80,
+                      color: Colors.red,
+                      child: Row(
+                        children: [
+                          CircleAvatar(),
+                        ],
                       ),
-                      child: Container(
-                        height: 80,
-                        color: Colors.red,
-                        child: Row(
-                          children: [
-                            CircleAvatar(),
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
+                    ),
+                  );
+                },   
+              ),
             ),
           ],
         ),
