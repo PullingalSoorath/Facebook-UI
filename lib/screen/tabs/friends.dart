@@ -66,6 +66,7 @@ class FriendsPage extends StatelessWidget {
                     Text(
                       'Friend Requests',
                       style: TextStyle(
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -75,6 +76,7 @@ class FriendsPage extends StatelessWidget {
                     Text(
                       '120',
                       style: TextStyle(
+                        fontSize: 16,
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
                       ),
@@ -83,7 +85,10 @@ class FriendsPage extends StatelessWidget {
                 ),
                 Text(
                   'See all',
-                  style: TextStyle(color: defaultBlue),
+                  style: TextStyle(
+                    color: defaultBlue,
+                    // fontSize: 16,
+                  ),
                 ),
               ],
             ),
@@ -96,16 +101,130 @@ class FriendsPage extends StatelessWidget {
                       vertical: 1,
                     ),
                     child: Container(
-                      height: 80,
+                      // height: 80,
                       color: Colors.red,
                       child: Row(
                         children: [
-                          CircleAvatar(),
+                          const CircleAvatar(
+                            radius: 35,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Name'),
+                              Row(
+                                children: [
+                                  Stack(
+                                    alignment: Alignment(10, 0),
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 15,
+                                        backgroundColor: Colors.grey,
+                                        backgroundImage: NetworkImage(
+                                          'https://picsum.photos/400?image=$index',
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(100),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.grey,
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            border: Border.all(
+                                              width: 2.5,
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .background,
+                                            ),
+                                          ),
+                                          height: 35,
+                                          width: 35,
+                                          child: CircleAvatar(
+                                            radius: 15,
+                                            backgroundColor: Colors.grey,
+                                            backgroundImage: NetworkImage(
+                                              'https://picsum.photos/400?image=${index + 10}',
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 30,
+                                    ),
+                                    child: Text(
+                                      '43 mutual friends',
+                                    ),
+                                  ),
+                                  // const SizedBox(
+                                  //   width: 30,
+                                  // )
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      right: 8,
+                                    ),
+                                    child: ElevatedButton(
+                                      style: ButtonStyle(
+                                        foregroundColor:
+                                            const MaterialStatePropertyAll(
+                                          Colors.white,
+                                        ),
+                                        backgroundColor:
+                                            const MaterialStatePropertyAll(
+                                          defaultBlue,
+                                        ),
+                                        shape: MaterialStatePropertyAll(
+                                          RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              10,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      onPressed: () {},
+                                      child: const Text('Confirm'),
+                                    ),
+                                  ),
+                                  ElevatedButton(
+                                    style: ButtonStyle(
+                                      foregroundColor:
+                                          const MaterialStatePropertyAll(
+                                        Colors.black,
+                                      ),
+                                      backgroundColor: MaterialStatePropertyAll(
+                                        Colors.grey[300],
+                                      ),
+                                      shape: MaterialStatePropertyAll(
+                                        RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    onPressed: () {},
+                                    child: const Text('Delete'),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
                         ],
                       ),
                     ),
                   );
-                },   
+                },
               ),
             ),
           ],

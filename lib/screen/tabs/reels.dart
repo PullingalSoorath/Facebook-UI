@@ -131,7 +131,7 @@ class _ReelsPageState extends State<ReelsPage> {
                             'Comments💢💢💢hereo...',
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: double.infinity,
                           child: Flexible(
                             flex: 3,
@@ -158,10 +158,10 @@ class _ReelsPageState extends State<ReelsPage> {
                                   Row(
                                     children: [
                                       Text('${index * 23 + 6}'),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 5,
                                       ),
-                                      Text('Comments'),
+                                      const Text('Comments'),
                                     ],
                                   ),
                                 ],
