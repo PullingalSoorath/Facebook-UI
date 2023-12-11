@@ -64,7 +64,7 @@ class _MobileScreenState extends State<MobileScreen>
                     IconButton(
                       icon: const Icon(
                         Icons.add_circle,
-                        size: 30,
+                        size: 28,
                       ),
                       color: Theme.of(context).colorScheme.primary,
                       onPressed: () {},
@@ -73,14 +73,16 @@ class _MobileScreenState extends State<MobileScreen>
                       onPressed: () {},
                       icon: SvgPicture.asset(
                         'assets/svg/search.svg',
-                        height: 25,
+                        height: 22,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     IconButton(
                       onPressed: () {},
                       icon: SvgPicture.asset(
                         'assets/svg/messages.svg',
-                        height: 25,
+                        height: 22,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ],
@@ -98,7 +100,7 @@ class _MobileScreenState extends State<MobileScreen>
                           height: 30,
                           color: _tabController.index == 0
                               ? defaultBlue
-                              : Colors.grey[700],
+                              : Colors.grey[600],
                         ),
                       ),
                       Tab(
@@ -107,7 +109,7 @@ class _MobileScreenState extends State<MobileScreen>
                           height: 30,
                           color: _tabController.index == 1
                               ? defaultBlue
-                              : Colors.grey[700],
+                              : Colors.grey[600],
                         ),
                       ),
                       Tab(
@@ -116,7 +118,7 @@ class _MobileScreenState extends State<MobileScreen>
                           height: 30,
                           color: _tabController.index == 2
                               ? defaultBlue
-                              : Colors.grey[700],
+                              : Colors.grey[600],
                         ),
                       ),
                       Tab(
@@ -125,7 +127,7 @@ class _MobileScreenState extends State<MobileScreen>
                           height: 30,
                           color: _tabController.index == 3
                               ? defaultBlue
-                              : Colors.grey[700],
+                              : Colors.grey[600],
                         ),
                       ),
                       Tab(
@@ -134,7 +136,7 @@ class _MobileScreenState extends State<MobileScreen>
                           height: 30,
                           color: _tabController.index == 4
                               ? defaultBlue
-                              : Colors.grey[700],
+                              : Colors.grey[600],
                         ),
                       ),
                       const Tab(

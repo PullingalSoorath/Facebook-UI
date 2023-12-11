@@ -8,6 +8,7 @@ class FriendsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -37,10 +38,20 @@ class FriendsPage extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Colors.grey[300],
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.grey[300]
+                        : Colors.grey[800],
                   ),
-                  padding: const EdgeInsets.all(8),
-                  child: const Text('Suggessions'),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
+                  child: const Text(
+                    'Suggessions',
+                    style: TextStyle(
+                        // color: Theme.of(context).colorScheme.primary,
+                        ),
+                  ),
                 ),
                 const SizedBox(
                   width: 10,
@@ -48,9 +59,14 @@ class FriendsPage extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Colors.grey[300],
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.grey[300]
+                        : Colors.grey[800],
                   ),
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
                   child: const Text('Your Friends'),
                 ),
               ],
@@ -98,15 +114,18 @@ class FriendsPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 1,
+                      vertical: 5,
                     ),
-                    child: Container(
+                    child: SizedBox(
                       // height: 80,
-                      color: Colors.red,
+                      // color: Colors.red,
                       child: Row(
                         children: [
-                          const CircleAvatar(
-                            radius: 35,
+                          CircleAvatar(
+                            backgroundImage: NetworkImage(
+                              'https://picsum.photos/400?image=${index + 20}',
+                            ),
+                            radius: 50,
                           ),
                           const SizedBox(
                             width: 10,
@@ -118,10 +137,10 @@ class FriendsPage extends StatelessWidget {
                               Row(
                                 children: [
                                   Stack(
-                                    alignment: Alignment(10, 0),
+                                    alignment: const Alignment(10, 0),
                                     children: [
                                       CircleAvatar(
-                                        radius: 15,
+                                        radius: 12,
                                         backgroundColor: Colors.grey,
                                         backgroundImage: NetworkImage(
                                           'https://picsum.photos/400?image=$index',
@@ -136,16 +155,16 @@ class FriendsPage extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(100),
                                             border: Border.all(
-                                              width: 2.5,
+                                              width: 2,
                                               color: Theme.of(context)
                                                   .colorScheme
                                                   .background,
                                             ),
                                           ),
-                                          height: 35,
-                                          width: 35,
+                                          // height: 35,
+                                          // width: 35,
                                           child: CircleAvatar(
-                                            radius: 15,
+                                            radius: 12,
                                             backgroundColor: Colors.grey,
                                             backgroundImage: NetworkImage(
                                               'https://picsum.photos/400?image=${index + 10}',
@@ -174,15 +193,46 @@ class FriendsPage extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                       right: 8,
                                     ),
+                                    child: SizedBox(
+                                      width: 130,
+                                      child: ElevatedButton(
+                                        style: ButtonStyle(
+                                          foregroundColor:
+                                              const MaterialStatePropertyAll(
+                                            Colors.white,
+                                          ),
+                                          backgroundColor:
+                                              const MaterialStatePropertyAll(
+                                            defaultBlue,
+                                          ),
+                                          shape: MaterialStatePropertyAll(
+                                            RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                10,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        onPressed: () {},
+                                        child: const Text('Confirm'),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 130,
                                     child: ElevatedButton(
                                       style: ButtonStyle(
                                         foregroundColor:
                                             const MaterialStatePropertyAll(
-                                          Colors.white,
+                                          Colors.black,
                                         ),
                                         backgroundColor:
-                                            const MaterialStatePropertyAll(
-                                          defaultBlue,
+                                            MaterialStatePropertyAll(
+                                          Theme.of(context).brightness ==
+                                                  Brightness.light
+                                              ? Colors.grey[300]
+                                              : Colors.grey[800],
                                         ),
                                         shape: MaterialStatePropertyAll(
                                           RoundedRectangleBorder(
@@ -193,28 +243,15 @@ class FriendsPage extends StatelessWidget {
                                         ),
                                       ),
                                       onPressed: () {},
-                                      child: const Text('Confirm'),
-                                    ),
-                                  ),
-                                  ElevatedButton(
-                                    style: ButtonStyle(
-                                      foregroundColor:
-                                          const MaterialStatePropertyAll(
-                                        Colors.black,
-                                      ),
-                                      backgroundColor: MaterialStatePropertyAll(
-                                        Colors.grey[300],
-                                      ),
-                                      shape: MaterialStatePropertyAll(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(
-                                            10,
-                                          ),
+                                      child: Text(
+                                        'Delete',
+                                        style: TextStyle(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
                                         ),
                                       ),
                                     ),
-                                    onPressed: () {},
-                                    child: const Text('Delete'),
                                   ),
                                 ],
                               )

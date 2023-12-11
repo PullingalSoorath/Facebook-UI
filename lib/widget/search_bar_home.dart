@@ -7,16 +7,16 @@ class SearchBarHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: SizedBox(
-        height: 65,
+        height: 60,
         child: Row(
           // crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 25,
+            const CircleAvatar(
+              radius: 22,
               backgroundImage: AssetImage(
                 'assets/images/profilepic.jpeg',
               ),
@@ -24,23 +24,25 @@ class SearchBarHome extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: SearchBar(
                   hintText: 'Write something here...',
                   hintStyle: MaterialStatePropertyAll(
-                    TextStyle(color: Colors.black87, fontSize: 18),
-                  ),
-                  elevation: MaterialStatePropertyAll(0),
-                  side: MaterialStatePropertyAll(
-                    BorderSide(
-                      width: 1,
-                      color: Colors.black87,
+                    TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 14,
                     ),
+                  ),
+                  elevation: const MaterialStatePropertyAll(0),
+                  side: const MaterialStatePropertyAll(
+                    BorderSide(
+                        width: 1, color: Color.fromRGBO(117, 117, 117, 1)),
                   ),
                 ),
               ),
             ),
-            Icon(
+            const Icon(
               Icons.picture_as_pdf,
               size: 40,
               color: Colors.green,
