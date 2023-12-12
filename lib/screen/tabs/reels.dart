@@ -38,6 +38,7 @@ class _ReelsPageState extends State<ReelsPage> {
                   children: [
                     SvgPicture.asset(
                       'assets/svg/user.svg',
+                      color: Theme.of(context).colorScheme.primary,
                       height: 25,
                     ),
                     const SizedBox(
@@ -45,6 +46,7 @@ class _ReelsPageState extends State<ReelsPage> {
                     ),
                     SvgPicture.asset(
                       'assets/svg/search.svg',
+                      color: Theme.of(context).colorScheme.primary,
                       height: 25,
                     ),
                   ],
