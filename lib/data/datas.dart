@@ -30,7 +30,7 @@ var names = [
 var comment = [
   ' I love Cars 💕',
   ' Cars are the best 💯',
-  ' 🙏 Dont Pray for Love\nOnly for Cars 🙏',
+  ' challenger',
   ' ♥️ Go Ride ♥️',
   ' ❤️‍🔥 Happy With My Car 💢',
   ' Dont Panic',
