@@ -38,6 +38,17 @@ class MyProfile extends StatelessWidget {
             ),
             Container(
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Theme.of(context).colorScheme.brightness ==
+                            Brightness.dark
+                        ? Colors.black
+                        : Colors.grey,
+                    blurRadius: 5,
+                    spreadRadius: -3,
+                    offset: const Offset(0, 0),
+                  ),
+                ],
                 borderRadius: BorderRadius.circular(10),
                 color:
                     Theme.of(context).colorScheme.brightness == Brightness.dark
@@ -45,13 +56,104 @@ class MyProfile extends StatelessWidget {
                         : Colors.white,
               ),
               height: 60,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.grey[900],
+                          foregroundImage: const NetworkImage(
+                            'https://i.pinimg.com/736x/44/9d/88/449d888ffe68af55c7cfd1951ea617af.jpg',
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Text(
+                          'Pullingal Soorath',
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 15,
+                        ),
+                        IconButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll(Colors.grey),
+                          ),
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.keyboard_arrow_down,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ),
-            Row(
+            const Row(
               children: [
-                Text(
-                  'Your shortcuts',
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 10,
+                  ),
+                  child: Text(
+                    'Your shortcuts',
+                  ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 90,
+              child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Theme.of(context).colorScheme.brightness ==
+                                      Brightness.dark
+                                  ? Colors.black
+                                  : Colors.grey,
+                              blurRadius: 5,
+                              spreadRadius: -3,
+                              offset: const Offset(0, 0),
+                            ),
+                          ],
+                          color: Colors.grey[800],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      const Text(
+                        'Name',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                        ),
+                      )
+                    ],
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return const SizedBox(
+                    width: 10,
+                  );
+                },
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+              ),
             )
           ],
         ),
