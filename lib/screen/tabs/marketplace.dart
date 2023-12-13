@@ -119,7 +119,12 @@ class MarketPlace extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.red,
+                            image: const DecorationImage(
+                              image: NetworkImage(
+                                'https://w0.peakpx.com/wallpaper/929/379/HD-wallpaper-samsung-galaxy-android.jpg',
+                              ),
+                              fit: BoxFit.cover,
+                            ),
                             borderRadius: BorderRadius.circular(
                               10,
                             ),
