@@ -3,7 +3,7 @@
 import 'package:facebookclone/screen/tabs/friends.dart';
 import 'package:facebookclone/screen/tabs/home.dart';
 import 'package:facebookclone/screen/tabs/marketplace.dart';
-import 'package:facebookclone/screen/tabs/messages.dart';
+import 'package:facebookclone/screen/tabs/profile.dart';
 import 'package:facebookclone/screen/tabs/notifications.dart';
 import 'package:facebookclone/screen/tabs/reels.dart';
 import 'package:facebookclone/theme/themedata.dart';
