@@ -39,7 +39,7 @@ class FriendsPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: Theme.of(context).brightness == Brightness.light
-                        ? Colors.grey[300]
+                        ? Colors.grey[400]
                         : Colors.grey[800],
                   ),
                   padding: const EdgeInsets.symmetric(
@@ -60,7 +60,7 @@ class FriendsPage extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: Theme.of(context).brightness == Brightness.light
-                        ? Colors.grey[300]
+                        ? Colors.grey[400]
                         : Colors.grey[800],
                   ),
                   padding: const EdgeInsets.symmetric(
@@ -214,9 +214,7 @@ class FriendsPage extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        onPressed: () {
-                                        
-                                        },
+                                        onPressed: () {},
                                         child: const Text('Confirm'),
                                       ),
                                     ),
@@ -233,7 +231,7 @@ class FriendsPage extends StatelessWidget {
                                             MaterialStatePropertyAll(
                                           Theme.of(context).brightness ==
                                                   Brightness.light
-                                              ? Colors.grey[300]
+                                              ? Colors.grey[400]
                                               : Colors.grey[800],
                                         ),
                                         shape: MaterialStatePropertyAll(

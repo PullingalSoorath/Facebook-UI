@@ -11,6 +11,10 @@ class MyProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:
+          Theme.of(context).colorScheme.brightness == Brightness.light
+              ? const Color.fromARGB(255, 229, 228, 228)
+              : Theme.of(context).colorScheme.background,
       body: ListView(
         children: [
           Padding(
@@ -68,7 +72,11 @@ class MyProfile extends StatelessWidget {
                         Row(
                           children: [
                             CircleAvatar(
-                              backgroundColor: Colors.grey[900],
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.brightness ==
+                                          Brightness.dark
+                                      ? Colors.grey[900]
+                                      : Colors.white,
                               foregroundImage: const NetworkImage(
                                 'https://i.pinimg.com/736x/44/9d/88/449d888ffe68af55c7cfd1951ea617af.jpg',
                               ),
@@ -154,7 +162,10 @@ class MyProfile extends StatelessWidget {
                                   offset: const Offset(0, 0),
                                 ),
                               ],
-                              color: Colors.grey[800],
+                              color: Theme.of(context).colorScheme.brightness ==
+                                      Brightness.dark
+                                  ? Colors.grey[800]
+                                  : Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
@@ -264,8 +275,11 @@ class MyProfile extends StatelessWidget {
                           ),
                         ),
                       ),
-                      backgroundColor: const MaterialStatePropertyAll(
-                        Color.fromARGB(255, 51, 51, 51),
+                      backgroundColor: MaterialStatePropertyAll(
+                        Theme.of(context).colorScheme.brightness ==
+                                Brightness.dark
+                            ? Colors.grey[800]
+                            : Colors.white,
                       ),
                     ),
                     onPressed: () {},
@@ -327,8 +341,10 @@ class MyProfile extends StatelessWidget {
                       ),
                     ),
                   ),
-                  backgroundColor: const MaterialStatePropertyAll(
-                    Color.fromARGB(255, 51, 51, 51),
+                  backgroundColor: MaterialStatePropertyAll(
+                    Theme.of(context).colorScheme.brightness == Brightness.dark
+                        ? Colors.grey[800]
+                        : Colors.white,
                   ),
                 ),
                 onPressed: () {},
@@ -411,7 +427,9 @@ class ProfileGridItems extends StatelessWidget {
               offset: const Offset(0, 0),
             ),
           ],
-          color: const Color.fromARGB(255, 51, 51, 51),
+          color: Theme.of(context).colorScheme.brightness == Brightness.dark
+              ? Colors.grey[800]
+              : Colors.white,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(

@@ -106,7 +106,7 @@ class _JoinGroupsState extends State<JoinGroups> {
               ),
             ),
             Container(
-              height: 445,
+              height: 455,
               width: double.infinity,
               color: Colors.transparent,
               child: ListView.builder(
@@ -118,9 +118,7 @@ class _JoinGroupsState extends State<JoinGroups> {
                   final pics = group['pics'];
 
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 5,
-                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -152,7 +150,11 @@ class _JoinGroupsState extends State<JoinGroups> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
-                                left: 15, right: 15, top: 10),
+                              left: 15,
+                              right: 15,
+                              top: 10,
+                              // bottom: 10,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
