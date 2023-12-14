@@ -188,7 +188,7 @@ class MarketPlace extends StatelessWidget {
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
-                        color: Colors.red,
+                        color: Colors.grey[900],
                         child: Image(
                           fit: BoxFit.cover,
                           image: NetworkImage(

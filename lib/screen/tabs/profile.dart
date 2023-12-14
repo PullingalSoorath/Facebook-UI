@@ -83,16 +83,33 @@ class MyProfile extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            const CircleAvatar(
-                              radius: 15,
+                            Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Icon(
+                                  Icons.location_searching_outlined,
+                                  size: 50,
+                                  color: Colors.white,
+                                ),
+                                const CircleAvatar(
+                                  backgroundColor: Colors.black,
+                                  radius: 15,
+                                  child: Text(
+                                    'PS',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            IconButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.grey),
-                              ),
-                              onPressed: () {},
-                              icon: const Icon(
+                            SizedBox(
+                              width: 10,
+                            ),
+                            CircleAvatar(
+                              radius: 15,
+                              child: const Icon(
                                 Icons.keyboard_arrow_down,
                               ),
                             ),
@@ -171,7 +188,7 @@ class MyProfile extends StatelessWidget {
                           width: 8,
                         ),
                         ProfileGridItems(
-                          icon: Icons.save,
+                          icon: Icons.restore_sharp,
                           text: "Saved",
                         ),
                       ],
@@ -267,7 +284,7 @@ class MyProfile extends StatelessWidget {
             color: Colors.grey,
             thickness: 0.2,
           ),
-          ProfileSupportList(
+          const ProfileSupportList(
             icon: Icons.question_mark_rounded,
             text: 'Help & supports',
           ),
@@ -275,7 +292,7 @@ class MyProfile extends StatelessWidget {
             color: Colors.grey,
             thickness: 0.2,
           ),
-          ProfileSupportList(
+          const ProfileSupportList(
             icon: Icons.settings,
             text: 'Settings & privacy',
           ),
@@ -283,7 +300,7 @@ class MyProfile extends StatelessWidget {
             color: Colors.grey,
             thickness: 0.2,
           ),
-          ProfileSupportList(
+          const ProfileSupportList(
             icon: Icons.gif_box_rounded,
             text: 'Also from Meta',
           ),
