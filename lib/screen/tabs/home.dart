@@ -16,59 +16,50 @@ class HomeScreen extends StatelessWidget {
       color: Theme.of(context).colorScheme.onPrimary,
       height: 8,
     );
-    return Column(
-      children: [
-        Expanded(
-          child: ListView.separated(
-            itemBuilder: (context, index) {
-              final comments = comment[index];
-              final name = names[index];
-              return index == 0
-                  ? const SearchBarHome()
-                  : index == 1
-                      ? Expanded(
-                          child: SizedBox(
-                            height: 280,
-                            child: ListView.builder(
-                              itemCount: statusNames.length,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                final statusname = statusNames[index];
-                                return index == 0
-                                    ?
-//My story
-                                    const MyStory()
-                                    :
-//Friends story
-                                    FriendsStory(
-                                        statusname: statusname,
-                                        index: index,
-                                      );
-                              },
-                            ),
-                          ),
-                        )
-                      : index == 3
-                          ? const JoinGroups()
-                          : index == 5
-                              ? const Shorts()
-                              : Posts(
-                                  comment: comments,
-                                  name: name,
+
+    return SizedBox(
+      // Wrap ListView with a Container
+      child: ListView.separated(
+        itemBuilder: (context, index) {
+          final comments = comment[index];
+          final name = names[index];
+          return index == 0
+              ? const SearchBarHome()
+              : index == 1
+                  ? SizedBox(
+                      height: 280,
+                      child: ListView.builder(
+                        itemCount: statusNames.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          final statusname = statusNames[index];
+                          return index == 0
+                              ? const MyStory()
+                              : FriendsStory(
+                                  statusname: statusname,
                                   index: index,
-                                  pics:
-                                      'https://picsum.photos/400?image=$index',
-                                  profilePics:
-                                      'https://picsum.photos/400?image=${index + 30}',
                                 );
-            },
-            separatorBuilder: (context, index) {
-              return gapContainer;
-            },
-            itemCount: 10,
-          ),
-        ),
-      ],
+                        },
+                      ),
+                    )
+                  : index == 3
+                      ? const JoinGroups()
+                      : index == 5
+                          ? const Shorts()
+                          : Posts(
+                              comment: comments,
+                              name: name,
+                              index: index,
+                              pics: 'https://picsum.photos/1000?image=$index',
+                              profilePics:
+                                  'https://picsum.photos/100?image=${index + 30}',
+                            );
+        },
+        separatorBuilder: (context, index) {
+          return gapContainer;
+        },
+        itemCount: 10,
+      ),
     );
   }
 }

@@ -147,6 +147,8 @@ class _PostsState extends State<Posts> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   InkWell(
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
                     onTap: () {
                       setState(() {
                         isliked = !isliked;

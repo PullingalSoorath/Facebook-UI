@@ -123,7 +123,7 @@ class FriendsPage extends StatelessWidget {
                         children: [
                           CircleAvatar(
                             backgroundImage: NetworkImage(
-                              'https://picsum.photos/400?image=${index + 20}',
+                              'https://picsum.photos/200?image=${index + 20}',
                             ),
                             radius: 50,
                           ),
@@ -143,7 +143,7 @@ class FriendsPage extends StatelessWidget {
                                         radius: 12,
                                         backgroundColor: Colors.grey,
                                         backgroundImage: NetworkImage(
-                                          'https://picsum.photos/400?image=$index',
+                                          'https://picsum.photos/50?image=$index',
                                         ),
                                       ),
                                       ClipRRect(
@@ -167,7 +167,7 @@ class FriendsPage extends StatelessWidget {
                                             radius: 12,
                                             backgroundColor: Colors.grey,
                                             backgroundImage: NetworkImage(
-                                              'https://picsum.photos/400?image=${index + 10}',
+                                              'https://picsum.photos/50?image=${index + 10}',
                                             ),
                                           ),
                                         ),

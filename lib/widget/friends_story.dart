@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class FriendsStory extends StatelessWidget {
   const FriendsStory({
     super.key,
-    required this.statusname, required this.index,
+    required this.statusname,
+    required this.index,
   });
 
   final String statusname;
@@ -24,7 +25,7 @@ class FriendsStory extends StatelessWidget {
               height: 280,
               child: Image(
                 image: NetworkImage(
-                  'https://picsum.photos/400?image=${index + 40}',
+                  'https://picsum.photos/800?image=${index + 40}',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -55,7 +56,8 @@ class FriendsStory extends StatelessWidget {
                         radius: 20,
                         backgroundColor: Colors.grey,
                         backgroundImage: NetworkImage(
-                            'https://picsum.photos/150?image=${index + 30}'),
+                          'https://picsum.photos/100?image=${index + 30}',
+                        ),
                       ),
                     ],
                   ),

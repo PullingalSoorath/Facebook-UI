@@ -192,7 +192,7 @@ class MarketPlace extends StatelessWidget {
                         child: Image(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            'https://picsum.photos/400?image=${index + 20}',
+                            'https://picsum.photos/600?image=${index + 20}',
                           ),
                         ),
                       ),

@@ -74,7 +74,8 @@ class NotificationPage extends StatelessWidget {
                                       children: [
                                         CircleAvatar(
                                           foregroundImage: NetworkImage(
-                                              'https://picsum.photos/400?image=${index + 20}'),
+                                            'https://picsum.photos/200?image=${index + 20}',
+                                          ),
                                           radius: 30,
                                         ),
                                         const SizedBox(

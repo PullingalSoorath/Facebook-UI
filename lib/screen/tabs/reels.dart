@@ -135,13 +135,12 @@ class _ReelsPageState extends State<ReelsPage> {
                         ),
                         SizedBox(
                           width: double.infinity,
-                          child: Flexible(
-                            flex: 3,
-                            child: Image(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                'https://picsum.photos/400?image=${index + 20}',
-                              ),
+                          child: Image(
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            height: 500, // Set the desired height here
+                            image: NetworkImage(
+                              'https://picsum.photos/1000?image=${index + 20}',
                             ),
                           ),
                         ),
@@ -180,15 +179,9 @@ class _ReelsPageState extends State<ReelsPage> {
                                         isliked ? likes == likes++ : likes--;
                                       });
                                     },
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        const LikeButton(initialIsLiked: false),
-                                        Text(
-                                          'Likes',
-                                          style: TextStyle(
-                                            color: Colors.grey[700],
-                                          ),
-                                        )
+                                        LikeButton(initialIsLiked: false),
                                       ],
                                     ),
                                   ),
@@ -205,7 +198,7 @@ class _ReelsPageState extends State<ReelsPage> {
                                       Text(
                                         'Comment',
                                         style: TextStyle(
-                                          color: Colors.grey[600],
+                                          color: Colors.grey[700],
                                         ),
                                       )
                                     ],
@@ -226,7 +219,7 @@ class _ReelsPageState extends State<ReelsPage> {
                                       Text(
                                         'Sent',
                                         style: TextStyle(
-                                          color: Colors.grey[600],
+                                          color: Colors.grey[700],
                                         ),
                                       )
                                     ],
@@ -236,7 +229,7 @@ class _ReelsPageState extends State<ReelsPage> {
                                       SvgPicture.asset(
                                         'assets/svg/share.svg',
                                         height: 26,
-                                        color: Colors.grey[600],
+                                        color: Colors.grey[700],
                                       ),
                                       const SizedBox(
                                         width: 5,

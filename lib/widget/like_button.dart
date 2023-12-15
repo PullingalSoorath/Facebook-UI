@@ -25,15 +25,15 @@ class _LikeButtonState extends State<LikeButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        InkWell(
-          onTap: () {
-            setState(() {
-              isLiked = !isLiked;
-            });
-          },
-          child: !isLiked
+    return InkWell(
+      onTap: () {
+        setState(() {
+          isLiked = !isLiked;
+        });
+      },
+      child: Row(
+        children: [
+          !isLiked
               ? SvgPicture.asset(
                   'assets/svg/like.svg',
                   height: 30,
@@ -44,8 +44,14 @@ class _LikeButtonState extends State<LikeButton> {
                   height: 30,
                   color: defaultBlue,
                 ),
-        ),
-      ],
+          Text(
+            'Likes',
+            style: TextStyle(
+              color: Colors.grey[700],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
