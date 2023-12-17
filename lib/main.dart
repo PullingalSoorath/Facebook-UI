@@ -15,14 +15,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      home: const ResponsiveLayout(
-        mobileView: MobileScreen(),
-        tabletView: TabletScreen(),
-        desktopView: DesktopScreen(),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        home: const MobileScreen()
+
+        //Layout will be uptdate on future
+        // ResponsiveLayout(
+        //   mobileView: MobileScreen(),
+        //   tabletView: TabletScreen(),
+        //   desktopView: DesktopScreen(),
+        // ),
+        );
   }
 }
